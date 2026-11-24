@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebDogApp.Models.UserComment.IndexVM>
+
+@{
+    ViewData["Title"] = "Comments";
+}
+
+<h1>User Comments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Add Comment
+    </a>
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <h5 class="card-title">
+                @item.UserName
+            </h5>
+
+            <p class="card-text">
+                @item.Comment
+            </p>
+
+        </div>
+    </div>
+}
